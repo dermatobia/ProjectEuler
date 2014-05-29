@@ -1,4 +1,5 @@
 ProjectEuler
 ============
 
-From projecteuler.net
+Just some exercises from http://projecteuler.net
+
