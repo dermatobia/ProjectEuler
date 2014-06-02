@@ -5,32 +5,35 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
 def largest_palindrome
-	larger = 0
+	largest = 0
 	smaller = 0
 		999.downto(100) do |num1|
 			999.downto(100) do |num2|
 				prod = num1 * num2
 				if palindrome?(prod)
 
-					if larger < prod
-						# puts "in larger < prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
-						smaller = larger
-						larger = prod
+					if largest < prod
+						# puts "in largest < prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
+						smaller = largest
+						largest = prod
 
-					# having this elsif above larger > prod improves speed because it doesn't have to go all the way down to num1 = 0	
+					# Having this elsif above largest > prod improves speed because 
+					# 	it doesn't have to go all the way down to num1 == 100
+					# However, assumption is made that there isn't any other prod at lower num2 that is
+					# 	larger than 'smaller'
 					elsif smaller > prod 		
 						# puts "in smaller > prod"
-						return larger 
+						return largest 
 							
-					elsif larger > prod 		# having this to break out of inner loop improves speed
-						# puts "in larger > prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
+					elsif largest > prod 		# having this to break out of inner loop improves speed
+						# puts "in largest > prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
 						break # break out from inner downto loop of num2
 					end
 
 				end # end of if palindrome?
 			end # end of num2 downto loop
 		end # end of num1 downto loop
-	larger
+	largest
 end # end of def
 
 def palindrome?(obj)
