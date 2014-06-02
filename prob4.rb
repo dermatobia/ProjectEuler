@@ -13,15 +13,17 @@ def largest_palindrome
 				if palindrome?(prod)
 
 					if larger < prod
-						puts "in larger < prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
+						# puts "in larger < prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
 						smaller = larger
 						larger = prod
-					elsif smaller > prod
-						puts "in smaller > prod"
+
+					# having this elsif above larger > prod improves speed because it doesn't have to go all the way down to num1 = 0	
+					elsif smaller > prod 		
+						# puts "in smaller > prod"
 						return larger 
 							
-					elsif larger > prod
-						puts "in larger > prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
+					elsif larger > prod 		# having this to break out of inner loop improves speed
+						# puts "in larger > prod, num1 = #{num1}, num2 = #{num2}, prod = #{prod}"
 						break # break out from inner downto loop of num2
 					end
 
