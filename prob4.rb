@@ -50,3 +50,26 @@ def palindrome?(obj)
 end
 
 p largest_palindrome 	# 993 * 913 = 906609
+
+
+# ====================================
+#  			REFLECTION
+# ====================================
+
+# When I was solving this problem, I had a personal dilemma of whether or not I 
+# should use built in methods in Ruby to solve the problem. 
+
+# As much as I love Ruby for the ease of use and the many built-in methods to 
+# sort, or reverse, or split, etc, should I use them? Like, should I use 
+# Prime library to get my prime numbers, or should I do it 'manually' by 
+# writing my own Eratosthenes Sieve? Sometimes I feel that I am being spoilt 
+# by these shortcuts. After all, I am doing these problems for personal 
+# improvement.
+
+# I guess, for the time being, I will try to refrain myself from using them,
+# as much as I could in simpler problems.
+
+
+
+
+
