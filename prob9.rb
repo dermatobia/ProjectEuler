@@ -1,4 +1,4 @@
-# ======= PROB 8 - Special Pythagorean triplet ============
+# ======= PROB 9 - Special Pythagorean triplet ============
 
 # A Pythagorean triplet is a set of three natural 
 # numbers, a < b < c, for which,
@@ -47,3 +47,7 @@ p find_abc_prod # ==> 31875000
 # ====================================
 
 # I have to say, I quite enjoy doing this problem. 
+
+# Looking at overview pdf after submission, seems like 
+# there might be more efficient way to find the answer. 
+# I will leave that for next time.
