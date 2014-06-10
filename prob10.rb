@@ -3,36 +3,31 @@
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 # Find the sum of all the primes below two million.
 
-# Get prime numbers using Eratosthenes Sieve method
+
+require 'Prime'
+
 def primes(num)
-  whole_array = (2..num).to_a
-  prime_array = [whole_array.shift]
-  sum = 0
-  until whole_array == []
-    whole_array.delete_if { |x| x % prime_array.last == 0 }
-    prime_array << whole_array.shift
+  arr = []
+  Prime.each(num) do |prime|
+    arr << prime  
   end
-  prime_array
+  arr
 end
-
-def sum_primes(num)
-  prime_array = primes(num)
-  prime_array.reduce(:+)
-end
-
-# p sum_primes(1_000_000)
-# p primes(10)
 
 def sum(num)
-  whole_array = (2..num).to_a
-  last_prime = whole_array.shift
-  sum = last_prime
-  until whole_array == []
-    whole_array.delete_if {|x| x % last_prime == 0 }
-    last_prime = whole_array.shift
-    sum += last_prime
-  end
-  sum
+  primes(num).reduce(:+)
 end
 
-p sum(2_000_000)
+p sum(2_000_000) # ==> 142913828922
+
+# ====================================
+#       REFLECTION
+# ====================================
+
+# I 'cheated' by using ruby's built-in prime library. My first
+# attempt (using Eratosthenes Sieve) was taking too long. It worked
+# for smaller number at hundreds of thousands, but took too long 
+# when it hits a million. 
+
+# I will have to revisit this prob and attempt it again without using
+# prime library.
